@@ -2,7 +2,7 @@ from collections import namedtuple
 from datetime import date
 
 
-def age_to_calendar_year(age: int) -> int:
+def get_birth_year_from_age(age: int) -> int:
     """Calculates a calendar year based on given age.
 
     Args:
@@ -15,7 +15,7 @@ def age_to_calendar_year(age: int) -> int:
     return current_year - age
 
 
-def get_input() -> namedtuple:
+def get_person_info() -> namedtuple:
     """Gets personal attributes from standard input and packages them into an object.
 
     Returns:
@@ -29,8 +29,8 @@ def get_input() -> namedtuple:
 
 def main() -> None:
     """Main function of program."""
-    person = get_input()
-    birth_year = age_to_calendar_year(person.age)
+    person = get_person_info()
+    birth_year = get_birth_year_from_age(person.age)
     print(f'\nHello {person.name}! You were born in {birth_year}.', end='')
 
 
