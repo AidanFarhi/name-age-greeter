@@ -3,10 +3,10 @@ from datetime import date
 
 
 def get_person_info() -> namedtuple:
-    """Gets personal info from standard input and packages them into an object.
+    """Gets personal info from standard input and puts it into an object.
 
     Returns:
-        A Person object containing the personal info.
+        A Person namedtuple object containing the personal info.
     """
     Person = namedtuple('Person', ['name', 'age'])
     name = input('What is your name? ')
