@@ -43,7 +43,7 @@ def main() -> None:
     person = get_person_info()
     birth_year = get_birth_year_from_age(person.age)
     greeting = generate_greeting(person.name, birth_year)
-    print(greeting, end='')
+    print(greeting)
 
 
 if __name__ == '__main__':
