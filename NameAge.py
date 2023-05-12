@@ -2,6 +2,18 @@ from collections import namedtuple
 from datetime import date
 
 
+def get_person_info() -> namedtuple:
+    """Gets personal info from standard input and packages them into an object.
+
+    Returns:
+        A Person object containing the personal info.
+    """
+    Person = namedtuple('Person', ['name', 'age'])
+    name = input('What is your name? ')
+    age = int(input('How old are you? '))
+    return Person(name, age)
+
+
 def get_birth_year_from_age(age: int) -> int:
     """Calculates a calendar year based on given age.
 
@@ -11,27 +23,27 @@ def get_birth_year_from_age(age: int) -> int:
     Returns:
         The calendar year of birth.
     """
-    current_year = date.today().year
-    return current_year - age
+    return date.today().year - age
 
 
-def get_person_info() -> namedtuple:
-    """Gets personal attributes from standard input and packages them into an object.
+def generate_greeting(name: str, year: int) -> str:
+    """Generates a greeting string.
+    Args:
+        name: The name to be used in the greeting.
+        year: The year to be used in the greeting.
 
     Returns:
-        A Person object containing the attributes.
+        A string containing a greeting including personal info.
     """
-    Person = namedtuple('Person', ['name', 'age'])
-    name = input('What is your name? ')
-    age = int(input('How old are you? '))
-    return Person(name, age)
+    return f'\nHello {name}! You were born in {year}.'
 
 
 def main() -> None:
     """Main function of program."""
     person = get_person_info()
     birth_year = get_birth_year_from_age(person.age)
-    print(f'\nHello {person.name}! You were born in {birth_year}.', end='')
+    greeting = generate_greeting(person.name, birth_year)
+    print(greeting, end='')
 
 
 if __name__ == '__main__':
