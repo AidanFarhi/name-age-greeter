@@ -31,7 +31,7 @@ def main() -> None:
     """Main function of program."""
     person = get_input()
     birth_year = age_to_calendar_year(person.age)
-    print(f'Hello {person.name}! You were born in {birth_year}.')
+    print(f'\nHello {person.name}! You were born in {birth_year}.', end='')
 
 
 if __name__ == '__main__':
