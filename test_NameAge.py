@@ -30,7 +30,7 @@ class TestNameAge(TestCase):
     @patch('builtins.input', side_effect=['John', '30'])
     def test_main(self, mock_input):
         year = date.today().year - 30
-        expected_output = f"\nHello John! You were born in {year}."
+        expected_output = f"\nHello John! You were born in {year}.\n"
         with StringIO() as output:
             with patch('sys.stdout', new=output):
                 main()
