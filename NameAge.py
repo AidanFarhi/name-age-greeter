@@ -3,10 +3,10 @@ from datetime import date
 
 
 def get_person_info() -> namedtuple:
-    """Gets personal info from standard input and puts it into an object.
+    """Gets personal info from standard input and stores it in an object.
 
     Returns:
-        A Person namedtuple object containing the personal info.
+        A person's personal info.
     """
     Person = namedtuple('Person', ['name', 'age'])
     name = input('What is your name? ')
@@ -28,12 +28,13 @@ def get_birth_year_from_age(age: int) -> int:
 
 def generate_greeting(name: str, year: int) -> str:
     """Generates a greeting string.
+
     Args:
         name: The name to be used in the greeting.
         year: The year to be used in the greeting.
 
     Returns:
-        A string containing a greeting including personal info.
+        A greeting including personal info.
     """
     return f'\nHello {name}! You were born in {year}.'
 
