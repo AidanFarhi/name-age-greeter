@@ -1,12 +1,13 @@
 from collections import namedtuple
 from datetime import date
+from typing import Tuple
 
 
-def get_person_info() -> namedtuple:
+def get_person_info() -> Tuple[str, int]:
     """Gets personal info from standard input and stores it in an object.
 
     Returns:
-        A person's personal info.
+        A person's info.
     """
     Person = namedtuple('Person', ['name', 'age'])
     name = input('What is your name? ')
